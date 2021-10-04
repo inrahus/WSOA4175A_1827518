@@ -1,0 +1,524 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Urbanist", sans-serif;
+
+    background-color: lightblue;
+}
+
+/*Sections*/
+
+section h2 {
+    font-size: 2rem;
+
+    color: white;
+}
+
+.Home, .Blogs, .Art {
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.About{
+    width: 80vw;
+    height: 40vh;
+
+    background-color: cadetblue;
+
+    border-radius: 0.25rem;
+
+    box-shadow: 0.125rem 0.125rem 0.8rem rgba(0, 0, 0, 0.75);
+
+    display: flex;
+
+    margin: 5vh auto 1.15rem auto;
+
+    justify-content: space-evenly;
+
+    align-items: center;
+    
+}
+
+.about-text{
+    width: 35vw;
+    color: white;
+    line-height: 1.5rem;
+
+    margin-top: 2vh;
+}
+
+.about-text p:nth-child(1){
+    color: white;
+    font-weight: bold;
+    font-size: 1.75rem;
+    line-height: 0;
+
+    padding-bottom: 5vh;
+
+}
+
+.about-text p:nth-child(2), .about-text p:nth-child(3), .about-text p:nth-child(4){
+    font-size: 1rem;
+    font-weight: 300;
+
+    padding-bottom: 1vh;
+}
+
+/*Nav*/
+
+nav{
+    height: 10vh;
+    width: 100%;
+
+    margin: auto;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+
+    position: sticky;
+    top: 0px;
+    
+    background-color: cadetblue;
+    
+    z-index: 1; 
+}
+
+.logo{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    font-size: 18px;
+
+   color: whitesmoke;
+}
+
+.nav-links{
+    width: 45%;
+
+    display: flex;
+    justify-content: space-around;
+
+    color: white;
+}
+
+nav a, .blog-cards-link{
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    transition: 0.75s;
+}
+
+.nav-links a::after{
+    position: absolute;
+
+    content: "";
+
+    width: 100%;
+    height: 2px;
+
+    top: 100%;
+    left: 0;
+
+    background: black;
+
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.nav-links a:hover, .about-links a:hover{
+    color: black;
+}
+
+.nav-links a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+   }
+
+
+a{
+    text-decoration: none;
+}
+
+a:link, a:visited{
+	color: white;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    
+    font-size: 20px;
+}
+
+.menuicon{
+    display: none;
+    margin: 2vh;
+}
+
+.line1, .line2, .line3{
+    width: 30px;
+    height: 5px;
+    margin: 5px;
+    border-radius: 15%;
+
+    background-color: white;
+
+    transition: all 0.3s ease;
+}
+
+/*Responsivity*/
+
+@media screen and (max-width: 768px){
+
+    html{
+        overflow-x: hidden;
+    }
+    
+    .nav-links {
+       width: 40%;
+       
+       position: fixed;
+       right: 0px;
+       height: 90vh;
+       top: 10vh;
+
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+      
+       transform: translateX(100%);
+
+       transition: tranform 0.5s ease-in;
+
+       background-color: cadetblue;
+   }
+
+   nav ul li{
+       opacity: 0;
+   }
+
+   .menuicon{
+       display: block;
+   }
+
+   .blog-cards{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .quiver{
+        max-width: 5vh;
+        max-height: 5vh;
+    
+        padding-top: 0vh;
+        padding-bottom: 5vh;
+    
+        align-items: center;
+    }
+
+}
+
+.nav-active{
+transform: translateX(0%);
+}
+    
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-6px, 8px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+
+/*Blog Cards*/
+
+.blog-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    padding: 1vh;
+}
+
+.blog-cards p{
+    font-size: 0.75rem;
+    font-weight: 250;
+
+    padding: 1vh;
+}
+
+.blog-cards h3{
+    font-size: 1rem;
+ 
+    margin-top: 0px;
+
+    padding: 1vh;
+}
+
+.blog-cards time{
+    font-size: 0.6rem;
+}
+
+.card{
+    display: grid;
+
+    grid-template-columns: 30vh;
+    grid-template-rows: 30vh 20vh;
+    grid-template-areas:"image" "text";
+
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+
+    border-radius: 5px;
+
+    background: cadetblue;
+
+    text-align: center;
+
+    transition: 0.5s ease;
+    cursor: pointer;
+    
+    margin: 5vh;
+}
+
+.card:hover{
+    transform: scale(1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.card-image-1, .card-image-2, .card-image-3, .card-image-4{
+    grid-area: image;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    background-size: cover;
+}
+
+.card-text{
+    grid-area: text;
+
+    margin: 25px;
+}
+
+/*Scroll Down Arrows*/
+
+.quiver{
+    max-width: 5vh;
+    max-height: 5vh;
+
+    padding-top: 5vh;
+
+    align-items: center;
+}
+
+.arrows div{
+    display: block;
+
+    width: 1.5vw;
+    height: 3vh;
+
+    margin: -0.8rem;
+
+    border-bottom: 0.25rem solid white;
+    border-right: 0.25rem solid white;
+
+    transform: rotate(45deg);
+
+    animation: animate 2s infinite;
+}
+
+.arrows div:nth-child(2){
+    animation-delay: -0.2s;
+   
+}
+
+.arrows div:nth-child(3){
+    animation-delay: 0.4s;
+}
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-1.25rem, -1.25rem);
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(1.25rem, 1.25rem);
+    }
+}
+
+.arrows:hover{
+    cursor: pointer;
+}
+
+/*Buttons*/
+
+button {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    margin-top: 2vh;
+
+    transform: translate(0, 0);
+   }
+   
+   button {
+    background: none;
+    color: white;
+
+    width: 10rem;
+    height: 2.5rem;
+
+    border: 0.0625rem solid cadetblue;
+
+    font-size: 0.75rem;
+
+    border-radius: 0.3rem;
+    transition: .6s;
+    overflow: hidden;
+   }
+   
+   button:focus {
+    outline: none;
+   }
+   
+   button:after {
+       content: '';
+       display: block;
+       position: absolute;
+       background: rgba(255,255,255,.2);
+       width: 2vw;
+       height: 100vh;
+       left: 30px;
+       top: 0;
+       opacity: 0;
+       filter: blur(30px);
+       transform: translateX(-100px) scaleX(-15deg);
+   }
+   
+   button:hover {
+      background: lightblue;
+      cursor: pointer;
+   }
+   
+   button:hover:before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+   }
+   
+   button:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: .7s;
+   }
+
+/*Blogs*/
+
+.blog-space{
+    margin: 1vw 5vw 1vw 5vw;
+
+    text-align: justify;
+    
+    color: white;
+
+    font-size: 1rem;
+}
+
+.blog-text{
+    margin: 1.5vw 15vw 1.5vw 15vw;
+    padding-bottom: 5vh;
+
+    background-color: cadetblue;
+
+    border-radius: 5px;
+    
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-text p{
+    margin: 1vw 5vw 1vw 5vw;
+    line-height: 1.5;
+}
+
+.blog-text p:nth-child(1){
+    color: white;
+    font-weight: bold;
+    font-size: 1.75rem;
+    line-height: 0;
+
+    padding-bottom: 2.5vh;
+    padding-top: 5vh;
+
+}
+
+/*Blog Card Images*/
+
+.card-image-1{
+    background-image: url(/Hub/CSS/Images/pexels-pixabay-355935.jpg);
+}
+/*Photo by Pixabay from Pexels*/
+
+.card-image-2{
+    background-image: url(/Hub/CSS/Images/pexels-junior-teixeira-2047905.jpg);
+}
+/*Photo by Junior Teixeira from Pexels*/
+
+.card-image-3{
+    background-image: url(/Hub/CSS/Images/pexels-ivan-samkov-7621142.jpg);
+}
+/*Photo by Ivan Samkov from Pexel*/
+
+.card-image-4{
+    background-image: url(/Hub/CSS/Images/pexels-jess-bailey-designs-3663314.jpg);
+}
+/*Photo by Jess Bailey Designs from Pexels*/
+
+
+/*About Menu*/
+
+.about-links{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    
+    font-size: 20px;
+
+    width:30vh;
+}
