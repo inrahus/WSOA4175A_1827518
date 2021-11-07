@@ -3,6 +3,8 @@
     padding: 0px;
 
     box-sizing: border-box;
+
+    scroll-behavior: smooth;
 }
 
 body{
@@ -257,6 +259,11 @@ transform: translateX(0%);
     transform: rotate(45deg) translate(-6px, -8px);
 }
 
+/*Blog Section*/
+
+.Blogs{
+    padding-top: 10vh;
+}
 
 /*Blog Cards*/
 
