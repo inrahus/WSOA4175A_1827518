@@ -42,7 +42,7 @@ section h2 {
 
     box-shadow: 0.125rem 0.125rem 0.8rem rgba(0, 0, 0, 0.75);
 
-    display:flex;
+    display: flex;
 
     margin: 5vh auto 1.15rem auto;
 
@@ -58,6 +58,10 @@ section h2 {
     line-height: 1.5rem;
 
     margin-top: 2vh;
+
+    background-color: cadetblue;
+
+    z-index: 3;
 }
 
 .about-text p:nth-child(1){
@@ -570,14 +574,14 @@ button {
 
     text-align: justify;
 
-    font-size: 40px;
+    font-size: 33px;
     color: transparent;
 
     cursor: default;
 }
 
 .links-bg a{
-    color: transparent;
+    color: rgba(245, 245, 245, 0.205);
 }
 
 .links-bg a:hover{
