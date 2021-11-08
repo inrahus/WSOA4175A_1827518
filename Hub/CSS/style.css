@@ -9,6 +9,9 @@
 
 body{
     font-family: "Urbanist", sans-serif;
+    background-color: lightblue;
+
+    flex: none;
 }
 
 /*Sections*/
@@ -30,7 +33,7 @@ section h2 {
 }
 
 .About{
-    width: 80vw;
+    width: 70vw;
     height: 40vh;
 
     background-color: cadetblue;
@@ -228,6 +231,25 @@ nav ul{
         align-items: center;
     }
 
+    .About{
+        width: 60vw;
+        height: 100vh;
+    
+        background-color: cadetblue;
+    
+        border-radius: 0.25rem;
+    
+        box-shadow: 0.125rem 0.125rem 0.8rem rgba(0, 0, 0, 0.75);
+    
+        display: flex;
+    
+        margin: 5vh auto 1.15rem auto;
+    
+        justify-content: space-evenly;
+    
+        align-items: center;
+        
+    }
 }
 
 .nav-active{
@@ -535,4 +557,47 @@ button {
     font-size: 20px;
 
     width:30vh;
+}
+
+.links-bg{
+    z-index: -5;
+
+    position: absolute;
+
+    text-align: justify;
+
+    font-size: 40px;
+    color: lightblue;
+
+}
+
+main{
+    z-index: 5;
+}
+
+@media screen and (max-width: 768px){
+    .links-bg{
+        font-size: 22px;
+    }
+
+    .card{
+        display: grid;
+    
+        grid-template-columns: 30vh;
+        grid-template-rows: 30vh 30vh;
+        grid-template-areas:"image" "text";
+    
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    
+        border-radius: 5px;
+    
+        background: cadetblue;
+    
+        text-align: center;
+    
+        transition: 0.5s ease;
+        cursor: pointer;
+        
+        margin: 5vh;
+    }
 }
