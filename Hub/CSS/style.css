@@ -89,7 +89,7 @@ nav{
 
     margin: auto;
     display:flex;
-    align-items: center;
+    align-items:center;
     justify-content: space-around;
 
     position: sticky;
@@ -110,7 +110,7 @@ nav{
 }
 
 .nav-links{
-    width: 45%;
+    width: 30%;
 
     display: flex;
     justify-content: space-around;
@@ -526,32 +526,32 @@ button {
 /*Blog Card Images*/
 
 .card-image-1{
-    background-image: url(https://inrahus.github.io/WSOA4175A_1827518/Hub/CSS/Images/pexels-pixabay-355935.jpg);
+    background-image: url(./Images/pexels-pixabay-355935.jpg);
 }
 /*Photo by Pixabay from Pexels*/
 
 .card-image-2{
-    background-image: url(https://inrahus.github.io/WSOA4175A_1827518/Hub/CSS/Images/pexels-junior-teixeira-2047905.jpg);
+    background-image: url(./Images/pexels-junior-teixeira-2047905.jpg);
 }
 /*Photo by Junior Teixeira from Pexels*/
 
 .card-image-3{
-    background-image: url(https://inrahus.github.io/WSOA4175A_1827518/Hub/CSS/Images/pexels-ivan-samkov-7621142.jpg);
+    background-image: url(./Images/pexels-ivan-samkov-7621142.jpg);
 }
 /*Photo by Ivan Samkov from Pexels*/
 
 .card-image-4{
-    background-image: url(https://inrahus.github.io/WSOA4175A_1827518/Hub/CSS/Images/pexels-jess-bailey-designs-3663314.jpg);
+    background-image: url(./Images/pexels-jess-bailey-designs-3663314.jpg);
 }
 /*Photo by Jess Bailey Designs from Pexels*/
 
 .card-image-5{
-    background-image: url(https://inrahus.github.io/WSOA4175A_1827518/Hub/CSS/Images/_A2A0285.jpg);
+    background-image: url(./Images/_A2A0285.jpg);
 }
 /*Photo by Alex Lau*/
 
 .card-image-6{
-    background-image: url(https://inrahus.github.io/WSOA4175A_1827518/Hub/CSS/Images/pexels-francesco-ungaro-6232977.jpg);
+    background-image: url(./Images/pexels-francesco-ungaro-6232977.jpg);
 }
 /*Photo by Francesco Ungaro from Pexels*/
 
@@ -566,6 +566,8 @@ button {
 
     width:30vh;
 }
+
+/*Int Art*/
 
 .links-bg{
     z-index: 1;
@@ -589,6 +591,8 @@ button {
     cursor: pointer;
 }
 
+/*Fixes for layering*/
+
 .blog-cards{
     z-index: 3;
 }
@@ -597,6 +601,7 @@ nav{
     z-index: 10;
 }
 
+/*More Responsive Fixes*/
 @media screen and (max-width: 768px){
     .links-bg{
         font-size: 22px;
