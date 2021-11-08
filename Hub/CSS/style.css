@@ -42,7 +42,7 @@ section h2 {
 
     box-shadow: 0.125rem 0.125rem 0.8rem rgba(0, 0, 0, 0.75);
 
-    display: flex;
+    display:flex;
 
     margin: 5vh auto 1.15rem auto;
 
@@ -364,6 +364,8 @@ transform: translateX(0%);
     padding-top: 5vh;
 
     align-items: center;
+
+    z-index: 3;
 }
 
 .arrows div{
@@ -421,6 +423,8 @@ button {
     margin-top: 2vh;
 
     transform: translate(0, 0);
+
+    z-index: 4;
    }
    
    button {
@@ -560,19 +564,33 @@ button {
 }
 
 .links-bg{
-    z-index: -5;
+    z-index: 1;
 
-    position: absolute;
+    position:absolute;
 
     text-align: justify;
 
     font-size: 40px;
-    color: lightblue;
+    color: transparent;
 
+    cursor: default;
 }
 
-main{
-    z-index: 5;
+.links-bg a{
+    color: transparent;
+}
+
+.links-bg a:hover{
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.blog-cards{
+    z-index: 3;
+}
+
+nav{
+    z-index: 10;
 }
 
 @media screen and (max-width: 768px){
