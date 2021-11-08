@@ -604,7 +604,7 @@ nav{
 /*More Responsive Fixes*/
 @media screen and (max-width: 768px){
     .links-bg{
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .card{
